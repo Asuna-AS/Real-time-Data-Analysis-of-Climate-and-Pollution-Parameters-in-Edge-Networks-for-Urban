@@ -1,11 +1,12 @@
 import React from 'react'
 import "./particle.css"
+import bg from './backCloud.png'
 const Particle = () => {
   return (
     <>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+      <div className="bg fixed h-full w-full flex">
+        {/* <img className='w-full' src={bg}></img> */}
+      </div>
     </>
   )
 }

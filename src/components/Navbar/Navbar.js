@@ -14,8 +14,7 @@ const Navbar = () => {
         { id: 1, text: 'Home', to: '/' },
         { id: 2, text: 'Blogs', to: '/blogs' },
         { id: 3, text: 'Checkup', to: '/checkup' },
-        { id: 4, text: 'Hospitals', to: '/hospitals' },
-        { id: 5, text: 'Contact', to: '/contact' },
+        { id: 4, text: 'Contact', to: '/contact' },
     ]
     const handleClick = () => {
         setMobileNav(!mobileNav)
@@ -31,18 +30,15 @@ const Navbar = () => {
     window.addEventListener('scroll', onChangeHeader)
 
     return (
-        <header className={changeHeader ? " bg-indigo-500 fixed z-50 top-0 left-0 w-full transition duration-500" : "bg-transparent fixed z-50 top-0 left-0 w-full transition duration-500"}>
+        <header className={changeHeader ? " bg-gray-500 fixed z-50 top-0 left-0 w-full transition duration-500" : "bg-transparent fixed z-50 top-0 left-0 w-full transition duration-500"}>
             {/* desktop nav  */}
             <nav className="flex justify-between items-center max-w-screen-xl mx-auto px-12 py-6">
-                <div className="hidden md:flex pl-24 lg:flex">
-                    <NavBrand />
-                </div>
                 <div className="hidden md:flex lg:flex space-x-8">
-                    <ul className="flex bg-transparent rounded-xl border border-white shadow-2xl p-4 items-center gap-5">
+                    <ul  className="flex bg-transparent rounded-xl p-4 items-center gap-5">
                         {menu.map(item => (
                             <div className='flex'>
                             <li key={item.id}>
-                                <NavLink exact to={item.to} className="text-white text-md poppins" activeClassName="flex border-b-2 border-white">{item.text}</NavLink>
+                                <NavLink exact to={item.to} className="text-gray-200 text-md poppins transition-all" activeClassName="rounded-2xl p-2 border-2">{item.text}</NavLink>
                             </li>
                             </div>
                         ))}

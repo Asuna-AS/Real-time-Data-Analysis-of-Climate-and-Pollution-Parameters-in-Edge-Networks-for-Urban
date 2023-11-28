@@ -13,7 +13,7 @@ import ProductsScreen from './screens/Blogs.js';
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import HospitalScreen from './screens/HospitalScreen';
-import CheckupScreen from './screens/CheckupScreen';
+import CheckupScreen from './screens/Analysis.js';
 import AdvancedFeatures from './components/TabComponent/AdvancedFeatures';
 import NormalFeatures from './components/TabComponent/NormalFeatures';
 import Particle from './Particle.jsx';
@@ -25,6 +25,7 @@ const App = () => {
     <HashRouter>
       <AuthProvider>
         <OrderProvider>
+          <div className='h-screen w-screen flex flex-col justify-between'>
           <Particle/>
           <Navbar />
           {/* <Loading/> */}
@@ -39,10 +40,10 @@ const App = () => {
             <PrivateRoute  exact path="/blogs/"><ProductsScreen /></PrivateRoute >
             <PrivateRoute  exact path="/doctorForm/"><AdvancedFeatures /></PrivateRoute >
             <PrivateRoute  exact path="/patientForm/"><NormalFeatures /></PrivateRoute >
-            <Route exact path="/hospitals/"><HospitalScreen /></Route>
             <Route path="*"><ErrorScreen /></Route>
           </Switch>
           <Footer />
+          </div>
         </OrderProvider>
       </AuthProvider>
     </HashRouter>
